@@ -1,6 +1,6 @@
 {
   "name": "se.princessapollo.controlscheme",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "displayName": "Controler Scheme",
   "description": "This package load a controller scheme from a json file outside the game",
   "unity": "2018.1",
