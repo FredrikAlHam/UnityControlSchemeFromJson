@@ -1,0 +1,15 @@
+{
+  "name": "se.princessapollo.controlscheme",
+  "version": "0.0.4",
+  "displayName": "Controler Scheme",
+  "description": "This package load a controller scheme from a json file outside the game",
+  "unity": "2018.1",
+  "unityRelease": "0b5",
+  "dependencies": {
+    "com.unity.nuget.newtonsoft-json": "2.0.0"
+  },
+  "author": {
+    "name": "Princess Apollo",
+    "email": "dev@princessapollo.se"
+  }
+}
