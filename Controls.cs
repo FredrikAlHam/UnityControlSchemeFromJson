@@ -54,6 +54,7 @@ namespace PrincessApollo
             public Dictionary<string, string> keys;
             public ControlScheme(Dictionary<string, string> keys) => this.keys = keys;
             public override string ToString() => JsonConvert.SerializeObject(this);
+            public KeyCode GetCodeFromKey(string key) => (KeyCode)System.Enum.Parse(typeof(KeyCode), keys[key]);
         }
     }
 }
