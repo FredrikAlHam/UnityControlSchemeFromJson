@@ -10,6 +10,18 @@ namespace PrincessApollo
     {
         public static class Controls
         {
+            public static ControlScheme DefaultScheme = new ControlScheme(new Dictionary<string, string>(){
+                {"PlayerOne-Forward", "W"},
+                {"PlayerOne-Back", "A"},
+                {"PlayerOne-Left", "S"},
+                {"PlayerOne-Right", "D"},
+                {"PlayerOne-Punch", "Space"},
+                {"PlayerTwo-Forward", "UpArrow"},
+                {"PlayerTwo-Back", "DownArrow"},
+                {"PlayerTwo-Left", "LeftArrow"},
+                {"PlayerTwo-Right", "RightArrow"},
+                {"PlayerTwo-Punch", "Return"},
+            });
             public static ControlScheme Scheme
             {
                 get
@@ -20,7 +32,7 @@ namespace PrincessApollo
                         var path = UnityEngine.Application.dataPath + "/controls.ctrl";
                         if (!File.Exists(path))
                         {
-                            File.WriteAllText(path, "{\"keys\": {\"PlayerOne-Forward\": \"W\",\"PlayerOne-Back\": \"S\",\"PlayerOne-Left\": \"A\",\"PlayerOne-Right\": \"D\",\"PlayerOne-Punch\": \"LeftAlt\",\"PlayerTwo-Forward\": \"UpArrow\",\"PlayerTwo-Back\": \"DownArrow\",\"PlayerTwo-Left\": \"LeftArrow\",\"PlayerTwo-Right\": \"RightArrow\",\"PlayerTwo-Punch\": \"RightAlt\"}}");
+                            File.WriteAllText(path, DefaultScheme.ToString());
                             Debug.Log(path + " has been created");
                         }
                         scheme = JsonConvert.DeserializeObject<ControlScheme>(File.ReadAllText(path));
@@ -41,6 +53,7 @@ namespace PrincessApollo
             [JsonProperty]
             public Dictionary<string, string> keys;
             public ControlScheme(Dictionary<string, string> keys) => this.keys = keys;
+            public override string ToString() => JsonConvert.SerializeObject(this);
         }
     }
 }
