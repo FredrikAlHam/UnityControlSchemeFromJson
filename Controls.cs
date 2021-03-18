@@ -4,6 +4,11 @@ using Newtonsoft.Json;
 using UnityEngine;
 using System.IO;
 
+/*
+    Written in whole or in part by Princess Apollo
+    Licensed in whole according to the license found at https://static.princessapollo.se/licenses/mit-t.txt
+*/
+
 namespace PrincessApollo
 {
     namespace Controls
